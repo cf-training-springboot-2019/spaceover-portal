@@ -18,6 +18,10 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class WebAppController {
 
+    /**
+     *  Main Pages
+     */
+
     @RequestMapping("/")
     public String index(Model model) {
         return "index";
@@ -71,6 +75,10 @@ public class WebAppController {
         return "tables";
     }
 
+    /**
+     *  Interface Pages
+     */
+
     @RequestMapping("/buttons")
     public String buttons(Model model) {
         return "buttons.html";
@@ -101,9 +109,39 @@ public class WebAppController {
         return "utilities-animation.html";
     }
 
+    /**
+     *  Support Pages
+     */
+
     @RequestMapping("/charts")
     public String charts(Model model) {
-        return "charts";
+        return "graphs";
+    }
+
+    @RequestMapping("/blank")
+    public String blank(Model model) {
+        return "blank";
+    }
+
+    @RequestMapping("/notFound")
+    public String notFound(Model model) {
+        return "404";
+    }
+
+
+    @RequestMapping("/forgotPassword")
+    public String forgotPassword(Model model) {
+        return "forgot-password";
+    }
+
+    @RequestMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register(Model model) {
+        return "register";
     }
 
 }
