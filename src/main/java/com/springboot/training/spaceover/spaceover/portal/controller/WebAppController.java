@@ -65,15 +65,7 @@ public class WebAppController {
         return "missions";
     }
 
-    @RequestMapping("/tables")
-    public String tables(Model model) {
-        model.addAttribute("spacefleets", Arrays.asList(
-                SpaceFleet.builder().id(1l).name("SpaceFleetOne").sector("Alpha-3").status(SpaceFleetStatus.ACTIVE).build(),
-                SpaceFleet.builder().id(2l).name("SpaceFleetOne").sector("Alpha-4").status(SpaceFleetStatus.ACTIVE).build(),
-                SpaceFleet.builder().id(3l).name("SpaceFleetOne").sector("Alpha-1").status(SpaceFleetStatus.ACTIVE).build()
-        ));
-        return "tables";
-    }
+
 
     /**
      *  Interface Pages
@@ -81,41 +73,44 @@ public class WebAppController {
 
     @RequestMapping("/buttons")
     public String buttons(Model model) {
-        return "buttons.html";
+        return "buttons";
     }
 
     @RequestMapping("/cards")
     public String cards(Model model) {
-        return "cards.html";
+        return "cards";
     }
 
     @RequestMapping("/colors")
     public String colors(Model model) {
-        return "utilities-color.html";
+        return "utilities-color";
     }
 
     @RequestMapping("/borders")
     public String borders(Model model) {
-        return "utilities-border.html";
+        return "utilities-border";
     }
 
     @RequestMapping("/others")
     public String others(Model model) {
-        return "utilities-other.html";
+        return "utilities-other";
     }
 
     @RequestMapping("/animations")
     public String animations(Model model) {
-        return "utilities-animation.html";
+        return "utilities-animation";
     }
 
     /**
      *  Support Pages
      */
 
+    @RequestMapping("/tables")
+    public String tables(Model model) { return "tables"; }
+
     @RequestMapping("/charts")
     public String charts(Model model) {
-        return "graphs";
+        return "charts";
     }
 
     @RequestMapping("/blank")
