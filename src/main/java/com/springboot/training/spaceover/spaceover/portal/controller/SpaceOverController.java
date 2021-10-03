@@ -1,9 +1,6 @@
 package com.springboot.training.spaceover.spaceover.portal.controller;
 
-import com.springboot.training.spaceover.spaceover.portal.domain.model.CrewMember;
 import com.springboot.training.spaceover.spaceover.portal.domain.model.SpaceFleet;
-import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberStatus;
-import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberRole;
 import com.springboot.training.spaceover.spaceover.portal.enums.SpaceFleetStatus;
 import com.springboot.training.spaceover.spaceover.portal.service.SpaceOverService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +12,7 @@ import java.util.Arrays;
 
 @Controller
 @RequiredArgsConstructor
-public class WebAppController {
+public class SpaceOverController {
 
     /**
      * Main Pages
