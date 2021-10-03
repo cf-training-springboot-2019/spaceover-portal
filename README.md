@@ -1,5 +1,5 @@
-# spacecrew-manager
-[![License](https://img.shields.io/github/license/cf-training-springboot-2019/spacecrew-manager)](https://github.com/cf-training-springboot-2019/y/blob/master/LICENSE)
+# spaceover-portal
+[![License](https://img.shields.io/github/license/cf-training-springboot-2019/spaceover-portal)](https://github.com/cf-training-springboot-2019/y/blob/master/LICENSE)
 
 A small Spring microservice aimed to expose a web portal that manages all Spaceover platform related entities.
 The application uses Spring Boot parent bom version 2.4.5 as its foundation.
