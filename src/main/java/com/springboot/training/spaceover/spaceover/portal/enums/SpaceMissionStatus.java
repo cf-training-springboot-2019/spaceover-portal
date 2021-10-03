@@ -2,6 +2,14 @@ package com.springboot.training.spaceover.spaceover.portal.enums;
 
 public enum SpaceMissionStatus {
 
-    FINISHED, UNFINISHED, IN_PROGRESS,  ABORTED
+    IN_PROGRESS, FAILED, ABORTED, ACCOMPLISHED, NOT_IN_PROGRESS;
+
+    public static SpaceMissionStatus fromName(String name) {
+        for (SpaceMissionStatus e : values()) {
+            if (e.name().equals(name))
+                return e;
+        }
+        return null;
+    }
 
 }

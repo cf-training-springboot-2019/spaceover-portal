@@ -2,16 +2,15 @@ package com.springboot.training.spaceover.spaceover.portal.controller;
 
 import com.springboot.training.spaceover.spaceover.portal.domain.model.CrewMember;
 import com.springboot.training.spaceover.spaceover.portal.domain.model.SpaceFleet;
-import com.springboot.training.spaceover.spaceover.portal.domain.model.SpaceMission;
-import com.springboot.training.spaceover.spaceover.portal.domain.model.SpaceShip;
-import com.springboot.training.spaceover.spaceover.portal.enums.*;
+import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberStatus;
+import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberRole;
+import com.springboot.training.spaceover.spaceover.portal.enums.SpaceFleetStatus;
+import com.springboot.training.spaceover.spaceover.portal.service.SpaceOverService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Arrays;
 
 @Controller
@@ -19,8 +18,11 @@ import java.util.Arrays;
 public class WebAppController {
 
     /**
-     *  Main Pages
+     * Main Pages
      */
+
+    private final SpaceOverService spaceOverService;
+
 
     @RequestMapping("/")
     public String index(Model model) {
@@ -39,36 +41,25 @@ public class WebAppController {
 
     @RequestMapping("/spaceships")
     public String spaceShips(Model model) {
-        model.addAttribute("spaceships", Arrays.asList(
-                SpaceShip.builder().id(1l).name("Millennium Falcon").status(SpaceShipStatus.ACTIVE).maxOccupancy(BigInteger.TEN).spaceFleetId(1l).type(SpaceShipType.CRUISER).build(),
-                SpaceShip.builder().id(2l).name("Red Fox").status(SpaceShipStatus.ACTIVE).maxOccupancy(BigInteger.ONE).spaceFleetId(1l).type(SpaceShipType.CRUISER).build(),
-                SpaceShip.builder().id(3l).name("Death Start").status(SpaceShipStatus.ACTIVE).maxOccupancy(BigInteger.valueOf(10000l)).spaceFleetId(2l).type(SpaceShipType.CRUISER).build()
-        ));
+        spaceOverService.getSpaceShips(model);
         return "spaceships";
     }
 
     @RequestMapping("/crewmembers")
     public String crewMembers(Model model) {
-        model.addAttribute("crewmembers", Arrays.asList(
-                CrewMember.builder().id(1l).name("Han Solo").spaceShipId(1l).status(CrewMemberStatus.ACTIVE).role(CrewRole.CAPTAIN).build(),
-                CrewMember.builder().id(2l).name("Harry Potter").spaceShipId(2l).status(CrewMemberStatus.ACTIVE).role(CrewRole.WIZARD).build()
-        ));
+        spaceOverService.getSpaceCrewMembers(model);
         return "crewmembers";
     }
 
     @RequestMapping("/missions")
     public String missions(Model model) {
-        model.addAttribute("missions", Arrays.asList(
-                SpaceMission.builder().id(1l).name("Save Private Ryan").revenue(BigDecimal.ZERO).status(SpaceMissionStatus.IN_PROGRESS).spaceShipId(1l).build(),
-                SpaceMission.builder().id(1l).name("Blow up Death Star").revenue(BigDecimal.TEN).status(SpaceMissionStatus.FINISHED).spaceShipId(2l).build()
-        ));
+        spaceOverService.getSpaceMissions(model);
         return "missions";
     }
 
 
-
     /**
-     *  Interface Pages
+     * Interface Pages
      */
 
     @RequestMapping("/buttons")
@@ -102,11 +93,13 @@ public class WebAppController {
     }
 
     /**
-     *  Support Pages
+     * Support Pages
      */
 
     @RequestMapping("/tables")
-    public String tables(Model model) { return "tables"; }
+    public String tables(Model model) {
+        return "tables";
+    }
 
     @RequestMapping("/charts")
     public String charts(Model model) {

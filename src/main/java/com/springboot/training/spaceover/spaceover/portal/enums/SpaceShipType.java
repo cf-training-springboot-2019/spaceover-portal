@@ -2,6 +2,15 @@ package com.springboot.training.spaceover.spaceover.portal.enums;
 
 public enum SpaceShipType {
 
-    CRUISER, POD
+    ATTACK_CRUISER, BATTLE_CRUISER, COMBAT_CRUISER, HEAVY_CRUISER, LIGHT_CRUISER, STAR_CRUISER;
+
+    public static SpaceShipType fromName(String name) {
+        for (SpaceShipType e : values()) {
+            if (e.name().equals(name)) {
+                return e;
+            }
+        }
+        return null;
+    }
 
 }

@@ -6,12 +6,12 @@
 </head>
 <body th:fragment="navbar">
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon">
-            <img src="img/logo.ico" class="logo">
+            <img class="logo" src="img/logo.ico">
         </div>
         <div class="sidebar-brand-text mx-3">Space<sup>over</sup></div>
     </a>
@@ -36,9 +36,11 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <!--
         <a class="nav-link" href="/spacefleets">
             <i class="fas fa-fw fa-atom"></i>
             <span>Space Fleets</span></a>
+        -->
         <a class="nav-link" href="/spaceships">
             <i class="fas fa-fw fa-rocket"></i>
             <span>Space Ships</span></a>
@@ -50,19 +52,19 @@
             <span>Space Missions</span></a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr th:if="${@environment.getProperty('admin.tools.enabled')}" class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
+        <div th:if="${@environment.getProperty('admin.tools.enabled')}" class="sidebar-heading">
             Interface
         </div>
 
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-           aria-expanded="true" aria-controls="collapseTwo">
+        <a th:if="${@environment.getProperty('admin.tools.enabled')}" aria-controls="collapseTwo" aria-expanded="true" class="nav-link collapsed" data-target="#collapseTwo"
+           data-toggle="collapse" href="#">
             <i class="fas fa-fw fa-cog"></i>
             <span>Components</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div th:if="${@environment.getProperty('admin.tools.enabled')}" aria-labelledby="headingTwo" class="collapse" data-parent="#accordionSidebar" id="collapseTwo">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item" href="buttons">Buttons</a>
@@ -72,14 +74,14 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
+    <li class="nav-item" th:if="${@environment.getProperty('admin.tools.enabled')}">
+        <a aria-controls="collapseUtilities" aria-expanded="true" class="nav-link collapsed" data-target="#collapseUtilities"
+           data-toggle="collapse" href="#">
             <i class="fas fa-fw fa-wrench"></i>
             <span>Utilities</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-             data-parent="#accordionSidebar">
+        <div aria-labelledby="headingUtilities" class="collapse" data-parent="#accordionSidebar"
+             id="collapseUtilities">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
                 <a class="collapse-item" href="colors">Colors</a>
@@ -90,13 +92,13 @@
         </div>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-           aria-expanded="true" aria-controls="collapsePages">
+    <li class="nav-item" th:if="${@environment.getProperty('admin.tools.enabled')}">>
+        <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
+           data-toggle="collapse" href="#">
             <i class="fas fa-fw fa-folder"></i>
             <span>Pages</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div aria-labelledby="headingPages" class="collapse" data-parent="#accordionSidebar" id="collapsePages">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
                 <a class="collapse-item" href="login">Login</a>
@@ -111,14 +113,14 @@
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="nav-item" th:if="${@environment.getProperty('admin.tools.enabled')}">
         <a class="nav-link" href="charts">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item" th:if="${@environment.getProperty('admin.tools.enabled')}">
         <a class="nav-link" href="tables">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
@@ -134,7 +136,7 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card">
-        <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="">
+        <img alt="" class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg">
         <p class="text-center mb-2"><strong>SPACE OVER</strong> the unknown is our playground!</p>
         <a class="btn btn-success btn-sm">Lift Off!</a>
     </div>

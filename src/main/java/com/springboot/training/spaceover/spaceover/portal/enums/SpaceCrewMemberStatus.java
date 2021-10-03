@@ -1,7 +1,7 @@
 package com.springboot.training.spaceover.spaceover.portal.enums;
 
-public enum CrewRole {
+public enum SpaceCrewMemberStatus {
 
-    CAPTAIN, PILOT, TECHNICIAN, WIZARD
+    ACTIVE, INACTIVE
 
 }
