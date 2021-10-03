@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 @Controller
 @RequiredArgsConstructor
-public class WebAppController {
+public class SpaceOverController {
 
     /**
      * Main Pages
