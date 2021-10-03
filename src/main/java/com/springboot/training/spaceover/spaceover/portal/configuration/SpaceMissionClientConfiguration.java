@@ -1,10 +1,11 @@
 package com.springboot.training.spaceover.spaceover.portal.configuration;
 
-import com.springboot.training.spaceover.spaceover.portal.service.*;
+import com.springboot.training.spaceover.spaceover.portal.service.RestTemplateSpaceMissionClient;
+import com.springboot.training.spaceover.spaceover.portal.service.SpaceMissionClient;
+import com.springboot.training.spaceover.spaceover.portal.service.WebClientSpaceMissionClient;
 import com.springboot.training.spaceover.spaceover.portal.utils.properties.SpaceOverPortalProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;

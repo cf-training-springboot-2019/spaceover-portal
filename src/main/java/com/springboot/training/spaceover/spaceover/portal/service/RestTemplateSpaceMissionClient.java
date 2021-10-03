@@ -1,7 +1,6 @@
 package com.springboot.training.spaceover.spaceover.portal.service;
 
 import com.springboot.training.spaceover.spaceover.portal.domain.inbound.response.GetSpaceMissionResponse;
-import com.springboot.training.spaceover.spaceover.portal.domain.inbound.response.GetSpaceShipResponse;
 import com.springboot.training.spaceover.spaceover.portal.utils.properties.SpaceOverPortalProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

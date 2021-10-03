@@ -1,7 +1,7 @@
 package com.springboot.training.spaceover.spaceover.portal.domain.model;
 
-import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberStatus;
 import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberRole;
+import com.springboot.training.spaceover.spaceover.portal.enums.SpaceCrewMemberStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
