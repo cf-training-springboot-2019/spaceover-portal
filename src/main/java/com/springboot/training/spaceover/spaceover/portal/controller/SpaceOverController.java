@@ -3,12 +3,11 @@ package com.springboot.training.spaceover.spaceover.portal.controller;
 import com.springboot.training.spaceover.spaceover.portal.domain.model.SpaceFleet;
 import com.springboot.training.spaceover.spaceover.portal.enums.SpaceFleetStatus;
 import com.springboot.training.spaceover.spaceover.portal.service.SpaceOverService;
+import java.util.Arrays;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Arrays;
 
 @Controller
 @RequiredArgsConstructor

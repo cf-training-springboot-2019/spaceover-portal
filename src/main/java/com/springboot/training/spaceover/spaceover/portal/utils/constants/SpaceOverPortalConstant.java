@@ -29,6 +29,10 @@ public class SpaceOverPortalConstant {
     public static final String SPACE_MISSION = "space mission";
     public static final String SPACESHIPS = "spaceships";
     public static final String SPACESHIP = "spaceship";
+    public static final String PAGE_QPARAM = "page";
+    public static final String SIZE_QPARAM = "size";
+    public static final String SORT_QPARAM = "sort";
+
 
 
 }

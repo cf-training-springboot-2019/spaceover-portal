@@ -298,7 +298,7 @@
                                 <tr th:each="spaceship : ${spaceships}">
                                     <td><span th:text="${#strings.capitalizeWords(#strings.toLowerCase(spaceship.name))}"> Name </span></td>
                                     <td><span th:text="${#strings.capitalizeWords(#strings.toLowerCase(#strings.replace(spaceship.type,'_',' ')))}"> Type </span></td>
-                                    <td><span th:text="${#strings.capitalizeWords(#strings.toLowerCase(#strings.replace(spaceship.status)))}"> Type </span></td>
+                                    <td><span th:text="${#strings.capitalizeWords(#strings.toLowerCase(#strings.replace(spaceship.status,'_',' ')))}"> Type </span></td>
                                     <td><span th:text="${spaceship.maxOccupancy}"> Maximum Occupancy </span></td>
                                 </tr>
                                 </tbody>
